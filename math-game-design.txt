@@ -1,8 +1,10 @@
+To-do List:
+
 1. lives (player method)
 2. players (class)
-3. scores (player method)
 4. game (class)
 5. turn (game method)
 6. output game score (game method)
 7. input answers (game method)
 8. process answers (game method)
+9. generates questions (game method)
