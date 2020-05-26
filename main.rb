@@ -1,7 +1,6 @@
 
 require 'pp'
 require './game'
-require './player'
 
 game1 = Game.new
 

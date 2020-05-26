@@ -1,12 +1,11 @@
 class Player
   attr_reader :name
-  attr_accessor :lives
 
   MAX_LIVES = 3
 
   def initialize(name)
     @name = name
-    @lives = 3
+    @lives = MAX_LIVES
   end
 
   def dead?
@@ -14,11 +13,11 @@ class Player
   end
 
   def status
-    "#{name} : #{lives}/#{MAX_LIVES}".sub! "Player ", "P" 
+    "#{name} : #{@lives}/#{MAX_LIVES}".sub! "Player ", "P" 
   end
 
-  def update_lives(incrementor)
-    @lives += incrementor
+  def loses_lives(decrementor)
+    @lives -= decrementor
   end
 
 end
