@@ -1,7 +1,7 @@
 require './player'
 
 class Game
-  attr_reader :players
+  attr_reader :player1, :player2, :players
   attr_accessor :turn
 
   def initialize
@@ -28,24 +28,26 @@ class Game
 
       puts "Welcome to the Ruby math game!"
       puts "#{turn.name} begins!"
+
       while (!game_over?)
 
         fv, sv, o, a = question_key_generator
         puts "#{turn.name}: What does #{fv} #{o} #{sv} equal?"
+        print "> "
         response = $stdin.gets.chomp
 
         if response == a.to_s
-          puts "#{turn.name}: YES! You are correct"
+          puts "#{turn.name}: YES! You are correct."
         else 
-          puts "#{turn.name}: Seriously? No! >> #{a}"
+          puts "#{turn.name}: Seriously? No!"
           turn.update_lives(-1)
         end
 
-        first_half_sentence = "#{turn.status} vs "
+        puts "#{player1.status} vs #{player2.status}"
         @turn = @turn == @player1 ? @player2 : @player1
-        puts first_half_sentence + "#{turn.status}"
-
+        puts "------- NEW TURN -------"
       end
+
       winner = @player1.dead? ? @player2 : @player1
       puts "#{winner.name} wins with a score of #{winner.status[-3,3]}"
       puts  "------- GAME OVER ---------\nGood bye!"
