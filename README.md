@@ -4,6 +4,8 @@ A simple math game built with Ruby
 Example of game:
 
 ```
+Welcome to the Ruby math game!
+Player 1 begins!
 Player 1: What does 5 plus 3 equal?
 > 9
 Player 1: Seriously? No!
